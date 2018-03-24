@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+
+<html>
+<head>
+<title>Lien Aléatoire</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+generationLienAlea();
+
+});
+
+
+$("#lienaleatoire").live("click", function(){
+
+generationLienAlea();
+
+});
+
+
+function generationLienAlea(){
+
+var listliens = [ ];
+listliens[0] = "http://1800143437.teamasea.com/fr/products/OurProducts.aspx";
+listliens[1] = "http://1800143406.teamasea.com/fr/products/OurProducts.aspx";
+listliens[2] = "http://1800140679.teamasea.com/fr/products/OurProducts.aspx";
+
+nb = rand(0, listliens.length - 1);
+
+$("#lienaleatoire").attr('href', listliens[nb]);
+}
+
+function rand (min, max) {
+
+var argc = arguments.length;
+if (argc === 0) {
+min = 0;
+max = 2147483647;
+} else if (argc === 1) {
+throw new Error('Warning: rand() expects exactly 2 parameters, 1 given');
+}
+return Math.floor(Math.random() * (max - min + 1)) + min;
+
+}
+</script>
+</head>
+<body>
+<!-- target="_blank" pour que la page s'ouvre dans un autre onglet -->
+<a href="" id="lienaleatoire" target="">Cliquez ici pour visiter notre boutique ASEA</a>
+</body>
+</html>
+
+<h2>
+  <div class="text">Merci pour votre visite et bon shopping :) </div>
+</h2>
